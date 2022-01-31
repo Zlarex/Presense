@@ -21,11 +21,10 @@ client.once('ready', async() => {
     console.log('Info: The bot has been connected!')
     console.log(schedule)
 
-    let i = 0
     schedule.forEach(sch => {
         cron.schedule(sch.time, async () =>
             {
-                const embed = generateEmbedData(i)
+                const embed = generateSch(sch)
                 let mesg = await channel.send(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
                 mesg.react('✅')
             },
@@ -33,7 +32,6 @@ client.once('ready', async() => {
                 timezone: 'Asia/Jakarta'
             }
         )
-        i++
     })
 })
 
@@ -54,7 +52,7 @@ client.on('message', async (message) => {
         {
             if (args.length < 0) return message.channel.send(`⛔ Invalid Arguments!`)
             let idx = Number(args[0])
-            let embed = generateEmbedData(idx)
+            let embed = generateSchById(idx)
             let mesg = await message.channel.send(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
             mesg.react('✅')
         }
@@ -76,7 +74,7 @@ client.on('message', async (message) => {
         {
             let msgid = args[0]
             let idxFix = Number(args[1])
-            let embed = generateEmbedData(idxFix)
+            let embed = generateSchById(idxFix)
             await message.channel.messages.fetch(msgid).then(m => {
                 m.edit(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
             })
@@ -143,8 +141,11 @@ client.on('messageReactionRemove', async(reaction, user) => {
 
 // client.on("debug", ( e ) => console.log(e))
 
-function generateEmbedData(idx) {
-    let sch = schedule[idx]
+function generateSchById(idx) {
+    return generateSch(schedule[idx])
+}
+
+function generateSch(sch) {
     let fieldd = ''
     sch.dosen.forEach(d => {
         fieldd += `:pencil: \`--\` ${d}\n`
@@ -164,7 +165,6 @@ function generateEmbedData(idx) {
     }
     return embed
 }
-
 client.login(client.token)
 keepAlive()
 
