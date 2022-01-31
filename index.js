@@ -71,6 +71,18 @@ client.on('message', async (message) => {
           await message.channel.send(`Cya...!`)
           await message.guild.leave()
         }
+        else if (cmd == 'edit')
+        {
+            let msgid = args[0]
+            let idxFix = Number(args[1])
+            let embed = generateEmbedData(idxFix)
+            await message.channel.messages.fetch(msgid).then(m => {
+                m.edit(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
+            })
+            .catch(e => {
+                console.log(`Error: Invalid message!`)
+            })
+        }
     }
 })
 
