@@ -21,11 +21,11 @@ client.once('ready', async() => {
     console.log('Info: The bot has been connected!')
     console.log(schedule)
 
-    let i = 0;
+    let i = 0
     schedule.forEach(sch => {
         cron.schedule(sch.time, async () =>
             {
-                const embed = generateEmbedData(i++);
+                const embed = generateEmbedData(i)
                 let mesg = await channel.send(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
                 mesg.react('✅')
             },
@@ -33,13 +33,14 @@ client.once('ready', async() => {
                 timezone: 'Asia/Jakarta'
             }
         )
+        i++
     })
 })
 
 client.on('message', async (message) => {
     if (message.author.id == process.env.DEVELOPER_ID)
     {
-        if (!message.content.startsWith('!')) return;
+        if (!message.content.startsWith('!')) return
         let [cmd, ...args] = message.content.slice(1).trim().split(/ +/g)
         if (cmd == 'spawn')
         {
@@ -51,8 +52,8 @@ client.on('message', async (message) => {
         }
         else if (cmd == 'force')
         {
-            if (args.length < 0) return message.channel.send(`⛔ Invalid Arguments!`);
-            let idx = Number(args[0]);
+            if (args.length < 0) return message.channel.send(`⛔ Invalid Arguments!`)
+            let idx = Number(args[0])
             let embed = generateEmbedData(idx)
             let mesg = await message.channel.send(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
             mesg.react('✅')
@@ -140,7 +141,7 @@ client.on('messageReactionRemove', async(reaction, user) => {
     }
 })
 
-// client.on("debug", ( e ) => console.log(e));
+// client.on("debug", ( e ) => console.log(e))
 
 function generateEmbedData(idx) {
     let sch = schedule[idx]
