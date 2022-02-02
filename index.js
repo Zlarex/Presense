@@ -9,7 +9,7 @@ const client = new Discord.Client({intents: intent})
 client.prefix = process.env.PREFIX
 client.token = process.env.BOT_TOKEN
 
-const schedule = JSON.parse(decrypt(`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`))
+const schedule = JSON.parse(decrypt(`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`))
 
 client.once('ready', async() => {
     const guild = await client.guilds.fetch(process.env.GUILD_ID)
@@ -36,53 +36,51 @@ client.once('ready', async() => {
 })
 
 client.on('message', async (message) => {
-    if (message.author.id == process.env.DEVELOPER_ID)
+    if (!message.content.startsWith('!')) return
+    if (message.author.id != process.env.DEVELOPER_ID) return message.channel.send(`⛔ Dev only!`);
+    let [cmd, ...args] = message.content.slice(1).trim().split(/ +/g)
+    if (cmd == 'spawn')
     {
-        if (!message.content.startsWith('!')) return
-        let [cmd, ...args] = message.content.slice(1).trim().split(/ +/g)
-        if (cmd == 'spawn')
-        {
-            const embed = {
-                description: `Pilih role berikut untuk mendapatkan notifikasi terkait dengan presensi pada web akademik polban.\n📢 <@&887530161170415676>`
-            }
-            let msg = await message.channel.send(`__**Notifikasi Presensi**__`, {embed})
-            msg.react('📢')
+        const embed = {
+            description: `Pilih role berikut untuk mendapatkan notifikasi terkait dengan presensi pada web akademik polban.\n📢 <@&887530161170415676>`
         }
-        else if (cmd == 'force')
-        {
-            if (args.length < 2) return message.channel.send(`⛔ Invalid Arguments!`)
-            let idx = Number(args[0])
-            let embed = generateSch(schedule[idx])
-            let mesg = await message.channel.send(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
-            mesg.react('✅')
-        }
-        else if (cmd == 'ping')
-        {
-          message.channel.send('Receiving...').then(msg => {
-              let createdAt = msg.createdAt - message.createdAt
-              let websocketAt = client.ws.ping
-              let editedMessage =  `:signal_strength: API: \`${createdAt}\` ms | WebSocket: \`${websocketAt}\` ms`
-              msg.edit(editedMessage)
-          })
-        }
-        else if (cmd == 'leave')
-        {
-          await message.channel.send(`Cya...!`)
-          await message.guild.leave()
-        }
-        else if (cmd == 'edit')
-        {
-            if (args.length < 2) return message.channel.send(`⛔ Invalid Arguments!`)
-            let msgid = args[0]
-            let idxFix = Number(args[1])
-            let embed = generateSch(schedule[idxFix])
-            await message.channel.messages.fetch(msgid).then(m => {
-                m.edit(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
-            })
-            .catch(e => {
-                console.log(`Error: Invalid message!`)
-            })
-        }
+        let msg = await message.channel.send(`__**Notifikasi Presensi**__`, {embed})
+        msg.react('📢')
+    }
+    else if (cmd == 'force')
+    {
+        if (args.length < 2) return message.channel.send(`⛔ Invalid Arguments!`)
+        let idx = Number(args[0])
+        let embed = generateSch(schedule[idx])
+        let mesg = await message.channel.send(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
+        mesg.react('✅')
+    }
+    else if (cmd == 'ping')
+    {
+        message.channel.send('Receiving...').then(msg => {
+            let createdAt = msg.createdAt - message.createdAt
+            let websocketAt = client.ws.ping
+            let editedMessage =  `:signal_strength: API: \`${createdAt}\` ms | WebSocket: \`${websocketAt}\` ms`
+            msg.edit(editedMessage)
+        })
+    }
+    else if (cmd == 'leave')
+    {
+        await message.channel.send(`Cya...!`)
+        await message.guild.leave()
+    }
+    else if (cmd == 'edit')
+    {
+        if (args.length < 2) return message.channel.send(`⛔ Invalid Arguments!`)
+        let msgid = args[0]
+        let idxFix = Number(args[1])
+        let embed = generateSch(schedule[idxFix])
+        await message.channel.messages.fetch(msgid).then(m => {
+            m.edit(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
+        })
+        .catch(e => {
+            console.log(`Error: Invalid message!`)
+        })
     }
 })
 
@@ -162,7 +160,7 @@ function generateSch(sch) {
     }
     return embed
 }
-// client.login(client.token)
+client.login(client.token)
 keepAlive()
 
 // https://discord.com/api/oauth2/authorize?client_id=886192578767249478&permissions=268635200&scope=bot
