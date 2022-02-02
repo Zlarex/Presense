@@ -49,7 +49,7 @@ client.on('message', async (message) => {
     }
     else if (cmd == 'force')
     {
-        if (args.length < 2) return message.channel.send(`⛔ Invalid Arguments!`)
+        if (args.length < 1) return message.channel.send(`⛔ Invalid Arguments!`)
         let idx = Number(args[0])
         let embed = generateSch(schedule[idx])
         let mesg = await message.channel.send(`<@&${process.env.PRESENCE_ROLE_ID}> Jangan lupa isi presensi:`, {embed})
