@@ -37,7 +37,7 @@ client.once('ready', async() => {
 
 client.on('message', async (message) => {
     if (!message.content.startsWith('!')) return
-    if (message.author.id != process.env.DEVELOPER_ID) return message.channel.send(`⛔ Dev only!`);
+    if (message.author.id != process.env.DEVELOPER_ID && message.channel.id == process.env.PRESENCE_CHANNEL_ID) return message.channel.send(`⛔ Dev only!`);
     let [cmd, ...args] = message.content.slice(1).trim().split(/ +/g)
     if (cmd == 'spawn')
     {
