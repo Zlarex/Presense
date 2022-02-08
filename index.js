@@ -84,6 +84,7 @@ client.on('message', async (message) => {
     }
     else if (cmd == 'shutdown')
     {
+        await message.react('👋')
         process.exit(0)
     }
 })
