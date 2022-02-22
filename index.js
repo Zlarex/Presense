@@ -35,6 +35,10 @@ client.once('ready', async() => {
     })
 })
 
+client.on('debug', async (msg) => {
+  console.log(msg)
+})
+
 client.on('message', async (message) => {
     if (!message.content.startsWith('!')) return
     if (message.author.id != process.env.DEVELOPER_ID && message.channel.id == process.env.PRESENCE_CHANNEL_ID) return message.channel.send(`⛔ Dev only!`);
