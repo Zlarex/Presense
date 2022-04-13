@@ -156,7 +156,7 @@ function generateSch(sch) {
     })
     const embed = {
         title: sch.name,
-        description: `:books: \`${sch.kode}\` ・ :alarm_clock: \`${sch.jam}\` ・ :link: [Web Akademik](${process.env.PRESENCE_LINK}) | [Ambil Role](https://discord.com/channels/${process.env.GUILD_ID}/${process.env.PRESENCE_CHANNEL_ID}/${process.env.PRESENCE_MESSAGE_ID})`,
+        description: `:books: \`${sch.kode}\` ・ :alarm_clock: \`${sch.jam} #Ramadhan\` ・ :link: [Web Akademik](${process.env.PRESENCE_LINK}) | [Ambil Role](https://discord.com/channels/${process.env.GUILD_ID}/${process.env.PRESENCE_CHANNEL_ID}/${process.env.PRESENCE_MESSAGE_ID})`,
         fields: [
             {
                 name: "Dosen",
