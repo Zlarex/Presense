@@ -2,7 +2,7 @@ const { Client, Message } = require('discord.js')
 const schedule = require('../schemas/schedule')
 
 module.exports = {
-    name: 'list',
+    name: 'listschedule',
     description: 'Get the list of the server schedule',
     permission: {
         user: [],
