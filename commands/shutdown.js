@@ -2,7 +2,7 @@ require('dotenv').config()
 const { Client, Message } = require('discord.js')
 
 module.exports = {
-    name: 'ping',
+    name: 'shutdown',
     description: 'Kills the bot',
     permission: {
         user: [],

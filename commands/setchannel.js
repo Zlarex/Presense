@@ -9,7 +9,7 @@ module.exports = {
         bot: []
     },
     isOwner: true,
-    min_args: 1,
+    min_args: 0,
     args: [],
     aliases: [],
     /**
